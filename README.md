@@ -1,4 +1,4 @@
-# Ecoomerce
+# Ecommerce
 
 ## Índice
 
