@@ -187,9 +187,58 @@ export default App
 
 ```
 
-## Componente Principale
+## Componente Principal
 
 - **Navbar:** Barra de navegación con enlaces a secciones de la página.
+
+## Consumo de Api 
+
+Este código utiliza React para consumir datos de la API pública de Platzi (https://api.escuelajs.co/api/v1/products). Los datos obtenidos son una lista de productos, que se muestran en una cuadrícula utilizando un componente llamado Card.
+
+***Estructura del Código**
+
+El componente principal es Home, que realiza las siguientes tareas:
+
+Inicializa un estado llamado items para almacenar los datos de la API.
+Usa useEffect para realizar una solicitud HTTP a la API cuando se monta el componente.
+Renderiza los datos obtenidos en un diseño tipo cuadrícula.
+
+```bash
+
+import { useState, useEffect } from "react";
+import Layout from "../../Components/Layout";
+import Card from "../../Components/Card";
+
+function Home() {
+
+    const [items, setItems] = useState(null); 
+
+    useEffect(() => {
+        fetch('https://api.escuelajs.co/api/v1/products')
+            .then(response => response.json())
+            .then(data => setItems(data));
+    }, []);
+
+    return (
+        <Layout>
+
+            <div className="grid grid-cols-4 gap-4 w-full max-w-screen-lg">
+                {
+                    items?.map((item) => (
+                        <Card key={item.id} data={item} />
+                    ))
+                }
+
+            </div>
+        </Layout>
+    );
+}
+
+export default Home;
+
+```
+
+
 
 ## Consideraciones Finales
 

@@ -28,5 +28,10 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "vite": "^5.4.10"
-  }
+  },
+  "description": "1. [Introducción](#introducción)\r 2. [Descripción General](#descripción-general)\r 3. [Tecnologías Utilizadas](#tecnologías-utilizadas)\r 4. [Estructura del Proyecto](#estructura-del-proyecto)\r 5. [Instalación y Configuración](#instalación-y-configuración)\r     - [Requisitos Previos](#requisitos-previos)\r     - [Clonación del Repositorio](#clonación-del-repositorio)\r     - [Instalación de Dependencias](#instalación-de-dependencias)\r     - [Configuración de TailwindCSS](#Configuración-de-TailwindCSS)\r     - [Ejecución de la Aplicación](#ejecución-de-la-aplicación)\r     - [Configuración de React Router](#Configuración-de-React-Router)\r 6. [Componentes Principales](#componentes-principales)\r 7. [Consideraciones Finales](#consideraciones-finales)\r 8. [Recursos Adicionales](#recursos-adicionales)",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
