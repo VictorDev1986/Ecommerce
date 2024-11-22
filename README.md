@@ -14,8 +14,9 @@
     - [Ejecución de la Aplicación](#ejecución-de-la-aplicación)
     - [Configuración de React Router](#Configuración-de-React-Router)
 6. [Componentes Principales](#componentes-principales)
-7. [Consideraciones Finales](#consideraciones-finales)
-8. [Recursos Adicionales](#recursos-adicionales)
+7. [Contexto Global](#Contexto-Global)
+8. [Consideraciones Finales](#consideraciones-finales)
+9. [Recursos Adicionales](#recursos-adicionales)
 
 ---
 
@@ -237,13 +238,86 @@ function Home() {
 export default Home;
 
 ```
+## Contexto Global
+
+El contexto se crea utilizando `createContext` y se exporta para que otros componentes puedan consumirlo.
+
+## Descripción
+
+`ShoppingCartContext` es un contexto global en React diseñado para manejar y compartir información relacionada con el carrito de compras entre diferentes componentes de la aplicación. Esto evita la necesidad de pasar props manualmente en toda la jerarquía de componentes.
+
+### Proveedor
+
+El proveedor, ShoppingCartProvider, envuelve los componentes que necesitan acceso al contexto. Proporciona un estado compartido y funciones para actualizar ese estado.
+
+```bash
+
+export const ShoppingCartProvider = ({ children }) => {
+    const [count, setCount] = useState(0);
+
+    return (
+        <ShoppingCartContext.Provider value={{ count, setCount }}>
+            {children}
+        </ShoppingCartContext.Provider>
+    );
+};
+
+```
+### Valores compartidos
+
+El contexto proporciona dos valores principales:
+
+**count:** El estado actual del carrito (por ejemplo, el número de productos en el carrito).
+**setCount:** Función para actualizar el estado del carrito.
+
+Uso
+Envolviendo la aplicación
+Para que el contexto esté disponible en toda la aplicación, envuelve tu componente raíz con ShoppingCartProvider:
+
+```bash
+  
+import { ShoppingCartProvider } from './ShoppingCartContext';
+
+function App() {
+    return (
+        <ShoppingCartProvider>
+            <YourAppComponents />
+        </ShoppingCartProvider>
+    );
+}
+
+```
+
+## Consumiendo el contexto
+
+Cualquier componente dentro de ShoppingCartProvider puede acceder al contexto usando el hook useContext.
+
+```bash
+
+import { useContext } from 'react';
+import { ShoppingCartContext } from './ShoppingCartContext';
+
+const Cart = () => {
+    const { count, setCount } = useContext(ShoppingCartContext);
+
+    return (
+        <div>
+            <p>Productos en el carrito: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Agregar producto</button>
+        </div>
+    );
+};
+
+```
+## Beneficios
+
+Centraliza la lógica del carrito de compras.
+Elimina la necesidad de pasar props manualmente a través de múltiples niveles de componentes.
+Facilita la reutilización y el mantenimiento del código.
 
 
 
 ## Consideraciones Finales
-
-
-
 
 
 ## Recursos Adicionales
