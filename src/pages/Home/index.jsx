@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Layout from "../../Components/Layout";
 import Card from "../../Components/Card";
+import ProductDetail from "../../Components/ProductDetail";
 
 function Home() {
 
@@ -19,7 +20,7 @@ function Home() {
 
                     {/* Texto principal */}
                     <div className="lg:w-1/2 text-center lg:text-left">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-12">
                             Descubre la <span className="text-blue-600">mejor</span> selección de accesorios
                         </h1>
                         <p className="text-white mb-6">
@@ -37,7 +38,7 @@ function Home() {
 
 
                     <div className="lg:w-1/2">
-                        <img src="public/Ecommerce.png" alt="Productos destacados" className="rounded-lg" />
+                        <img src="public/Ecommerce.png" alt="Productos destacados" className="rounded-lg mb-12 mt-12" />
                     </div>
                 </div>
             </section>
@@ -46,6 +47,8 @@ function Home() {
                     Lo mas  <span className="text-blue-600">destacado</span>
                 </h1>
             </div>
+           {/* Ventana modal carrito */} 
+            <ProductDetail/>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-screen-lg">
                 {
