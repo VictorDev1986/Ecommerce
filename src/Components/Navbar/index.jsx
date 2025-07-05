@@ -22,34 +22,11 @@ const Nabvar = () => {
                         All
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to="/Clothes"
-                        className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Clothes
-                    </NavLink>
-                </li>
+               
                 <li>
                     <NavLink to="/Electronics"
                         className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Electronics
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/Furnituris"
-                        className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Furnituris
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/Toys"
-                        className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Toys
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/Others"
-                        className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Others
                     </NavLink>
                 </li>
             </ul>
@@ -57,12 +34,7 @@ const Nabvar = () => {
                 <li className="text-black/60">
                     Victordev1986@gmail.com
                 </li>
-                <li>
-                    <NavLink to="/MyOrder"
-                        className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        MyOrder
-                    </NavLink>
-                </li>
+              
                 <li>
                     <NavLink to="/MyOrders"
                         className={({ isActive }) => isActive ? activeStyle : undefined}>
@@ -72,15 +44,10 @@ const Nabvar = () => {
                 <li>
                     <NavLink to="/MyAccount"
                         className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        MyAccount
+                        sing in
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to="/Signin"
-                        className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Signin
-                    </NavLink>
-                </li>
+                
                 <li className="flex">
                     <ShoppingBagIcon className="size-6 text-blue-500" />
                     <div>
