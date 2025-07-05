@@ -25,7 +25,15 @@ function MyOrders() {
                             {cartProducts.map((product, idx) => (
                                 <li key={idx} className="flex items-center border-b pb-2 cursor-pointer hover:bg-gray-100 transition"
                                     onClick={() => handleShowProduct(product)}>
-                                    <img src={product.images[0]} alt={product.title} className="w-24 h-24 object-cover rounded mr-6" />
+                                    <img
+                                        src={
+                                            product.images[0]?.startsWith('http')
+                                                ? product.images[0]
+                                                : `/${product.images[0]}`
+                                        }
+                                        alt={product.title}
+                                        className="w-24 h-24 object-cover rounded mr-6"
+                                    />
                                     <div className="flex-1">
                                         <div className="font-semibold">{product.title}</div>
                                         <div className="text-gray-600">${product.price}</div>
