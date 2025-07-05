@@ -6,8 +6,11 @@ export const ShoppingCartContext = createContext();
 
 // Definimos un componente proveedor que envolverá los componentes que necesitan acceso al contexto.
 export const ShoppingCartProvider = ({ children }) => {
-    // Inicializamos el estado del carrito con un valor inicial de 0.
+
+    // Estado para la cantidad de productos en el carrito
     const [count, setCount] = useState(0);
+    // Estado para los productos agregados al carrito
+    const [cartProducts, setCartProducts] = useState([]);
 
     // Definimos funciones para abrir y cerrar el detalle del producto.
     const [isProductDetailOpen, setisProductDetailOpen] = useState(false);
@@ -17,15 +20,18 @@ export const ShoppingCartProvider = ({ children }) => {
     // Definimos el estado para almacenar el producto actualmente seleccionado.
     const [productToShow, setProductToShow] = useState({});
 
+
     return (
         <ShoppingCartContext.Provider value={{
-            count, // El estado actual del carrito (cantidad de productos, por ejemplo).
-            setCount, // La función para actualizar la cantidad de productos.
-            openProductDetail,// La función para abrir el detalle del producto.
-            closeProductDetail,// La función para cerrar el detalle del producto.
-            isProductDetailOpen,// El estado para controlar la visibilidad del detalle del producto.
-            productToShow,// El producto actualmente seleccionado para mostrar su detalle.
-            setProductToShow,// La función para actualizar el producto a mostrar.
+            count, // cantidad de productos
+            setCount,
+            cartProducts, // productos en el carrito
+            setCartProducts,
+            openProductDetail,
+            closeProductDetail,
+            isProductDetailOpen,
+            productToShow,
+            setProductToShow,
         }}>
             {children}
         </ShoppingCartContext.Provider>
