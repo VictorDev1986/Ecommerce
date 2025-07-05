@@ -16,7 +16,7 @@ function MyAccount() {
 
     return (
         <Layout>
-            <div className="my-account-container">
+            <div className="my-account-container mt-24">
                 <div className="login-box">
                     <h2>Iniciar Sesión</h2>
                     <form onSubmit={handleSubmit} className="login-form">
